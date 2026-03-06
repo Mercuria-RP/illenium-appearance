@@ -14,7 +14,7 @@ Config.RCoreTattoosCompatibility = false
 
 Config.AsynchronousLoading = false -- Change this to false if you want the NUI data to load before displaying the appearance UI
 
-Config.UseTarget = false
+Config.UseTarget = true
 
 Config.TextUIOptions = {
     position = "left-center"
@@ -26,8 +26,8 @@ Config.NotifyOptions = {
 
 Config.OutfitCodeLength = 10
 
-Config.UseRadialMenu = false
-Config.UseOxRadial = false -- Set to true to use ox_lib radial menu, both this and UseRadialMenu must be true 
+Config.UseRadialMenu = true
+Config.UseOxRadial = true -- Set to true to use ox_lib radial menu, both this and UseRadialMenu must be true 
 
 Config.EnablePedsForShops = true
 Config.EnablePedsForClothingRooms = true
@@ -38,7 +38,7 @@ Config.PedMenuGroup = "group.admin"
 
 Config.EnableJobOutfitsCommand = false -- Enables /joboutfits and /gangoutfits commands
 
-Config.ShowNearestShopOnly = false
+Config.ShowNearestShopOnly = true
 Config.HideRadar = false -- Hides the minimap while the appearance menu is open
 Config.NearestShopBlipUpdateDelay = 10000
 
@@ -51,7 +51,7 @@ Config.TrackerClothingOptions = {
 }
 
 Config.NewCharacterSections = {
-    Ped = true,
+    Ped = false,
     HeadBlend = true,
     FaceFeatures = true,
     HeadOverlays = true,
@@ -103,28 +103,28 @@ Config.Blips = {
         Sprite = 366,
         Color = 47,
         Scale = 0.7,
-        Name = "Clothing Store",
+        Name = "Magasin de vêtements",
     },
     ["barber"] = {
         Show = true,
         Sprite = 71,
         Color = 0,
         Scale = 0.7,
-        Name = "Barber",
+        Name = "Coiffeur",
     },
     ["tattoo"] = {
         Show = true,
         Sprite = 75,
         Color = 4,
         Scale = 0.7,
-        Name = "Tattoo Shop",
+        Name = "Tatoueur",
     },
     ["surgeon"] = {
-        Show = true,
+        Show = false,
         Sprite = 102,
         Color = 4,
         Scale = 0.7,
-        Name = "Plastic Surgeon",
+        Name = "Chirurgien",
     }
 }
 
@@ -133,42 +133,42 @@ Config.TargetConfig = {
         model = "s_f_m_shop_high",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-tshirt",
-        label = "Open Clothing Store",
+        label = "Ouvrir le menu de vêtements",
         distance = 3
     },
     ["barber"] = {
         model = "s_m_m_hairdress_01",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-scissors",
-        label = "Open Barber Shop",
+        label = "Ouvrir le menu de coiffure",
         distance = 3
     },
     ["tattoo"] = {
         model = "u_m_y_tattoo_01",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-pen",
-        label = "Open Tattoo Shop",
+        label = "Ouvrir le menu de tatouage",
         distance = 3
     },
     ["surgeon"] = {
         model = "s_m_m_doctor_01",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-scalpel",
-        label = "Open Surgeon",
+        label = "Ouvrir le menu de chirurgie",
         distance = 3
     },
     ["clothingroom"] = {
         model = "mp_g_m_pros_01",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-sign-in-alt",
-        label = "Open Job / Gang Clothes Menu",
+        label = "Ouvrir le menu de vêtements",
         distance = 3
     },
     ["playeroutfitroom"] = {
         model = "mp_g_m_pros_01",
         scenario = "WORLD_HUMAN_STAND_MOBILE",
         icon = "fas fa-sign-in-alt",
-        label = "Open Outfits Menu",
+        label = "Ouvrir le menu de vêtements",
         distance = 3
     },
 }
@@ -560,7 +560,7 @@ Config.Stores = {
 Config.ClothingRooms = {
     {
         job = "police",
-        coords = vector4(454.91, -990.89, 30.69, 193.4),
+        coords = vector4(360.0717, -1593.7517, 25.4520, 287.6554),
         size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
@@ -573,6 +573,17 @@ Config.ClothingRooms = {
             vector3(453.47863769531, -987.76928710938, 30.69),
             vector3(454.35513305664, -988.46459960938, 30.69),
             vector3(460.4231262207, -987.94573974609, 30.69)
+        }
+    },
+    {
+        job = "ambulance",
+        coords = vector4(298.9898, -598.3871, 43.2841, 294.9744),
+        size = vector3(4, 4, 4),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(298.9898, -598.3871, 43.2841),
+            vector3(298.9898, -598.3871, 43.2841)
         }
     }
 }
@@ -616,7 +627,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Trooper Tan",
@@ -633,7 +644,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Long Sleeve",
@@ -650,7 +661,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Trooper Black",
@@ -667,7 +678,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {2, 3, 4},
+                grades = {2, 3, 4, 5, 6, 7},
             },
             {
                 name = "SWAT",
@@ -683,7 +694,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 52, texture = 0} -- Mask
                 },
-                grades = {3, 4},
+                grades = {3, 4, 5, 6, 7},
             }
         },
         ["Female"] = {
@@ -702,7 +713,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Trooper Tan",
@@ -719,7 +730,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Long Sleeve",
@@ -736,7 +747,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {1, 2, 3, 4},
+                grades = {1, 2, 3, 4, 5, 6, 7},
             },
             {
                 name = "Trooper Black",
@@ -753,7 +764,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 0, texture = 0} -- Mask
                 },
-                grades = {2, 3, 4},
+                grades = {2, 3, 4, 5, 6, 7},
             },
             {
                 name = "SWAT",
@@ -770,7 +781,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["mask"] = {item = 35, texture = 0} -- Mask
                 },
-                grades = {3, 4},
+                grades = {3, 4, 5, 6, 7},
             }
         }
     },
@@ -834,7 +845,7 @@ Config.Outfits = {
                     ["glass"] = {item = 0, texture = 0}, -- Glasses
                     ["ear"] = {item = 0, texture = 0} -- Ear accessories
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = {1, 2, 3, 4},
             },
             {
                 name = "Polo",
