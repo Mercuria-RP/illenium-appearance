@@ -66,6 +66,7 @@ local function CreatePedAtCoords(pedModel, coords, scenario)
     SetEntityInvincible(ped, true)
     PlaceObjectOnGroundProperly(ped)
     SetBlockingOfNonTemporaryEvents(ped, true)
+    Entity(ped).state:set('noDrugSale', true, false)
     return ped
 end
 

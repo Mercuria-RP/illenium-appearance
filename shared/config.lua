@@ -560,7 +560,7 @@ Config.Stores = {
 Config.ClothingRooms = {
     {
         job = "police",
-        coords = vector4(360.0717, -1593.7517, 25.4520, 287.6554),
+        coords = vector4(-563.4076, -115.8488, 42.2543, 246.6314),
         size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
